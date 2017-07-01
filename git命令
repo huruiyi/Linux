@@ -1,0 +1,11 @@
+git 常用命令
+
+	git clone
+
+	git init 
+
+	git commit
+
+	git config --global user.email "you@example.com"
+
+	git config --global user.name "Your Name"
