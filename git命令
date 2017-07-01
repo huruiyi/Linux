@@ -1,11 +1,27 @@
 git 常用命令
 
-	git clone
+	git clone 库名
 
 	git init 
 
-	git commit
+	 
+	
+全局配置
 
 	git config --global user.email "you@example.com"
 
 	git config --global user.name "Your Name"
+
+代码提交
+
+
+	git add .
+
+
+	git commit -m "提交信息"
+
+
+	git  push   提交代码
+
+	
+	git  pull   远程代码合并到本地代码（代码拉取）
