@@ -4,7 +4,12 @@
 #include <sys/wait.h>
 #include <stdlib.h>
 
-
+/*
+    A 、 wait和waitpid作用是进程资源回收
+    B 、 wait是阻塞函，waitpid可以设置阻塞和非阻塞
+    C 、 waitpid可指定回收某个进程资源
+    D 、 wait或waitpid调用一次只能清理一个子进程
+*/
 int main()
 {
 

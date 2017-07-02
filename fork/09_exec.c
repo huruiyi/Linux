@@ -1,16 +1,17 @@
-/*************************************************************************
-    > File Name: exec.c
-    > Author: YeKai
-    > Company: www.itcast.cn 
-    > Created Time: 2017年06月30日 星期五 23时44分30秒
- ************************************************************************/
-
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <fcntl.h>
 #include <string.h>
 #include <sys/types.h>
+
+/*
+    A 、 两个进程直接不可以共享同一个全局变量
+    B 、 execl函数是根据查找指定路径来执行对应的程序
+    C 、 子进程执行完execlp之后，父子进程地址空间中的代码段是不同的
+    D 、 一般情况下exec族函数都是和fork一起使用的
+*/
+
 int main(int argc,char *argv[])
 {
     //1.execl

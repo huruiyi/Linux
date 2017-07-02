@@ -6,7 +6,8 @@ int main()
     pid_t pid;
     int i;
     for(i = 0; i < 5; i ++)
-    {//父进程的出口
+    {
+        //父进程的出口
         pid = fork();
         if(pid == 0)
         {
