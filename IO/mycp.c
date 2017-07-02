@@ -13,6 +13,11 @@ int main(int argc,char *argv[])
         printf("using message:./a.out filea fileb\n");
         exit(1);
     }
+
+    struct stat sb;
+    int ret = lstat(argv[1],&sb);
+    mode_t mode= umask(sb.st_mode);
+
     int fd1=open(argv[1],O_RDONLY);
     int fd2=open(argv[2],O_WRONLY|O_CREAT|O_TRUNC);
     if(-1==fd1)
