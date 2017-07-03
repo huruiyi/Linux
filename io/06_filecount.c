@@ -9,7 +9,8 @@ int filecount(char *dirname)
 {
     //1. open dir
     DIR *pDir = opendir(dirname);
-    if (pDir == NULL) {
+    if (pDir == NULL)
+     {
         perror("open dir err");
         exit(1);
     }
@@ -29,12 +30,15 @@ int filecount(char *dirname)
             sprintf(newdirbuf, "%s/%s", dirname, pdirent->d_name);
             filecount(newdirbuf);
         }
-        if (pdirent->d_type == DT_REG) {//普通文件类型
+        if (pdirent->d_type == DT_REG)
+        {
+            //普通文件类型
             count++;
         }
     }
     //3. close dir
     closedir(pDir);
+    return 0;
 }
 
 int main(int argc, char *argv[])

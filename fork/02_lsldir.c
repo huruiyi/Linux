@@ -54,24 +54,29 @@ int show_file(const char *filepath,const char *orgfilepath)
 int main(int argc,char *argv[])
 {
     char frompath[100]={0};
-    if(argc != 2){
+    if(argc != 2)
+    {
         //printf("./a.out dir\n");
         //return -1;
         strcpy(frompath,"./");
     }
-    else{
+    else
+    {
         strcpy(frompath,argv[1]);
     }
     
     DIR *pdir = opendir(frompath);
-    if(pdir == NULL){
+    if(pdir == NULL)
+    {
         perror("opendir err");
         exit(1);
     }
     struct dirent *pdirent = NULL;
-    while((pdirent=readdir(pdir))){
+    while((pdirent=readdir(pdir)))
+    {
 
-        if(pdirent->d_name[0] == '.' ){
+        if(pdirent->d_name[0] == '.' )
+        {
             continue;
         }
         char newfilepath[256]={0};

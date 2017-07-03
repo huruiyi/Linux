@@ -10,7 +10,8 @@ int main()
 {
     //1. open ,O_CREAT,O_RDWR
     int fd = open("xxx.avi",O_RDWR|O_CREAT|O_TRUNC,0666);
-    if(fd < 0){
+    if(fd < 0)
+    {
         perror("open err");
         return -1;
     }

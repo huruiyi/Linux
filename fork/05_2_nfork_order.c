@@ -14,7 +14,8 @@ int main()
             //son
             break;//子进程退出循环的出口
         }
-        else if(pid > 0){
+        else if(pid > 0)
+        {
             //parent
         }
     }

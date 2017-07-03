@@ -14,7 +14,8 @@
 int main(int argc,char *argv[])
 {
     int fd = open("ps.out",O_WRONLY|O_CREAT|O_TRUNC,0666);
-    if(fd < 0){
+    if(fd < 0)
+    {
         perror("open err");
         return -1;
     }

@@ -5,12 +5,11 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
-
-
 int main()
 {
     int fd = open("11.log",O_RDWR|O_CREAT|O_TRUNC,0666);
-    if(fd < 0){
+    if(fd < 0)
+    {
         perror("open err");
         exit(1);
     }
@@ -25,7 +24,8 @@ int main()
 
     int ret = read(fd,buf,sizeof(buf));
 
-    if(ret){
+    if(ret)
+    {
         write(STDOUT_FILENO,buf,ret);
     }
 

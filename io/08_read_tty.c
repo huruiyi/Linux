@@ -1,10 +1,3 @@
-/*************************************************************************
-  > File Name: read_tty.c
-  > Author: YeKai
-  > Company: www.itcast.cn 
-  > Created Time: 2017年04月08日 星期六 09时27分16秒
- ************************************************************************/
-
 #include<stdio.h>
 #include<unistd.h>
 #include<stdlib.h>
@@ -13,7 +6,6 @@
 #include <errno.h>
 
 #define _TRY_AGAIN_ "Please try again~"
-
 
 int main(int argc,char *argv[])
 {
@@ -33,10 +25,13 @@ int main(int argc,char *argv[])
     fcntl(fd,F_SETFL,flags);
 
     char buf[256] = {0};
-    do{
+    do
+    {
         int ret = read(fd,buf,sizeof(buf));
-        if(ret == -1){
-            if(errno == EAGAIN){
+        if(ret == -1)
+        {
+            if(errno == EAGAIN)
+            {
                 printf("%s,errno=%d\n",_TRY_AGAIN_,errno);
                 sleep(1);
                 continue;
@@ -44,11 +39,15 @@ int main(int argc,char *argv[])
             perror("read err");
 
             break;
-        }else if(ret == 0){
+        }
+        else if(ret == 0)
+        {
             printf("read 0\n");
             break;
 
-        }else{
+        }
+        else
+        {
             printf("read:%s\n",buf);
             break;
         }

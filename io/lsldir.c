@@ -57,7 +57,8 @@ int filecount(char *dirname)
         ///printf("type:%d,name:%s\n", pdirent->d_type, pdirent->d_name);
         if (pdirent->d_type == DT_DIR) 
         {           
-            if (strcmp(pdirent->d_name, ".") == 0 || strcmp(pdirent->d_name, "..") == 0) {
+            if (strcmp(pdirent->d_name, ".") == 0 || strcmp(pdirent->d_name, "..") == 0) 
+            {
                 continue;
             }           
             char newdirbuf[512] = { 0 };
@@ -70,6 +71,7 @@ int filecount(char *dirname)
         }
     }   
     closedir(pDir);
+    return 0;
 }
                             
 int main(int argc, char *argv[])

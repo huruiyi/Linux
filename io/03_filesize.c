@@ -7,13 +7,15 @@
 
 int main(int argc,char *argv[])
 {
-    if(argc != 2){
+    if(argc != 2)
+    {
         printf("./a.out filename\n");
         return -1;
     }
     //1. open file 
     int fd = open(argv[1],O_RDONLY);
-    if(fd < 0){
+    if(fd < 0)
+    {
         perror("open err");
         exit(1);
     }
