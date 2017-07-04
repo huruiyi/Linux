@@ -9,20 +9,11 @@ int main()
     {
         //父进程的出口
         pid = fork();
-        if(pid == 0)
-        {
-            //son
-            break;//子进程退出循环的出口
-        }
-        else if(pid > 0)
-        {
-            //parent
-        }
-    }
-    
+        if(pid == 0) break;//如果是子进程，退出循环，不再执行fork              
+    }    
     //如何让父进程最后退，子进程按顺序退
     sleep(i);//每个进程在这里都睡觉
-    printf("i=%d\t",i);
+    
     if(i < 5)
     {
         //子进程

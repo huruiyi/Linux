@@ -17,13 +17,11 @@ int main()
         pid = fork();
         if(pid == 0)
         {
-            //son
             printf("儿子进程创建成功---pid=%d\n",pid);
             break;//子进程退出循环的出口
         }
         else if(pid > 0)
-        {
-            //parent
+        {           
             printf("父进进程创建成功---pid=%d\n",pid);
         }
     }
@@ -58,12 +56,14 @@ int main()
     else
     {
         // printf("回收！！");
+        // close(fd[0]);
+        // close(fd[1]);
+        // wait(NULL);
+        // wait(NULL);
+        // sleep(1);
+
         close(fd[0]);
         close(fd[1]);
-        // wait(NULL);
-        // wait(NULL);
-        sleep(1);
-
         for(int i=0;i<2;i++)
         {
             int status;

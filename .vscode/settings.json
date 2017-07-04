@@ -8,6 +8,11 @@
         "string.h": "c",
         "stat.h": "c",
         "waitflags.h": "c",
-        "fcntl2.h": "c"
+        "fcntl2.h": "c",
+        "stdio.h": "c",
+        "string2.h": "c",
+        "libio.h": "c",
+        "types.h": "c",
+        "typesizes.h": "c"
     }
 }

@@ -15,8 +15,6 @@ int main()
     }
     
     write(fd,"hello-world\n",12);
-    
-
     //需要移动一下读写位置
     
     lseek(fd,0,SEEK_SET);
@@ -28,7 +26,6 @@ int main()
     {
         write(STDOUT_FILENO,buf,ret);
     }
-
 
     close(fd);
     return 0;

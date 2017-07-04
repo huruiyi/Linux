@@ -19,7 +19,8 @@ int main()
             //parent
         }
     }
-    sleep(i);
+    //sleep(i);
+    
     if(i<5)
     {
         printf("I am %d son,pid=%d,ppid=%d\n",i,getpid(),getppid());
@@ -28,5 +29,6 @@ int main()
     {
         printf("I am parent,pid=%d,ppid=%d\n",getpid(),getppid());
     }
+    //sleep(10);
     return 0;
 }

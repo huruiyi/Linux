@@ -16,7 +16,8 @@ int main()
     truncate("mem.txt",16);
     //映射区建立
     char *mem = mmap(NULL,16,PROT_READ|PROT_WRITE,MAP_SHARED,fd,0);
-    if(mem == MAP_FAILED){
+    if(mem == MAP_FAILED)
+    {
         perror("mmap err");
         return -1;
     }
@@ -25,7 +26,8 @@ int main()
     strcpy(mem,"helloworld");
     //mem++;
     //释放映射区
-    if(munmap(mem,10) < 0){
+    if(munmap(mem,10) < 0)
+    {
         perror("munmap err");
         return -1;
     }
