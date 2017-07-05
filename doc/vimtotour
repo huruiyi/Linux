@@ -1,0 +1,52 @@
+  1. 把光标放在本节下面标记有 --> 那一行中的任何一个 (、[ 或 { 处。
+
+  2. 接着按 % 字符。
+
+  3. 此时光标的位置应当是在配对的括号处。
+:
+!               breaklist       cnext           dsplit          helpclose       lcscope         make            open            quit            sign            tab             version
+#               brewind         cnfile          earlier         helpfind        ldo             map             options         quitall         silent          tabNext         vertical
+&               browse          cnoreabbrev     echo            helpgrep        left            mapclear        ounmap          read            simalt          tabclose        vglobal
+*               bufdo           cnoremap        echoerr         helptags        leftabove       mark            ounmenu         recover         slast           tabdo           view
+<               buffer          cnoremenu       echohl          hide            let             marks           ownsyntax       redir           sleep           tabedit         vimgrep
+=               buffers         colder          echomsg         highlight       lexpr           match           packadd         redo            smagic          tabfind         vimgrepadd
+>               bunload         colorscheme     echon           history         lfdo            menu            packloadall     redraw          smap            tabfirst        visual
+@               bwipeout        comclear        edit            iabbrev         lfile           menutranslate   pclose          redrawstatus    smapclear       tablast         viusage
+Next            cNext           command         else            iabclear        lfirst          messages        pedit           registers       smenu           tabmove         vmap
+Print           cNfile          compiler        elseif          if              lgetbuffer      mkexrc          perl            resize          smile           tabnew          vmapclear
+X               cabbrev         confirm         emenu           ijump           lgetexpr        mksession       perldo          retab           snext           tabnext         vmenu
+abbreviate      cabclear        continue        endfor          ilist           lgetfile        mkspell         pop             return          snomagic        tabonly         vnew
+abclear         caddbuffer      copen           endfunction     imap            lgrep           mkview          popup           rewind          snoremap        tabprevious     vnoremap
+aboveleft       caddexpr        copy            endif           imapclear       lgrepadd        mkvimrc         ppop            right           snoremenu       tabrewind       vnoremenu
+all             caddfile        cpfile          endtry          imenu           lhelpgrep       mode            preserve        rightbelow      sort            tabs            vsplit
+amenu           call            cprevious       endwhile        inoreabbrev     lhistory        move            previous        ruby            source          tag             vunmap
+anoremenu       catch           cquit           enew            inoremap        list            mzfile          print           rubydo          spelldump       tags            vunmenu
+append          cbottom         crewind         ex              inoremenu       ll              mzscheme        profdel         rubyfile        spellgood       tcl             wNext
+argadd          cbuffer         cscope          execute         insert          llast           nbclose         profile         rundo           spellinfo       tcldo           wall
+argdelete       cc              cstag           exit            intro           llist           nbkey           promptfind      runtime         spellrepall     tclfile         while
+argdo           cclose          cunabbrev       exusage         isearch         lmake           nbstart         promptrepl      rviminfo        spellundo       tearoff         wincmd
+argedit         cd              cunmap          file            isplit          lmap            new             psearch         sNext           spellwrong      tfirst          windo
+argglobal       cdo             cunmenu         files           iunabbrev       lmapclear       next            ptNext          sall            split           throw           winpos
+arglocal        center          cwindow         filetype        iunmap          lnewer          nmap            ptag            sandbox         sprevious       tjump           winsize
+args            cexpr           debug           filter          iunmenu         lnext           nmapclear       ptfirst         sargument       srewind         tlast           wnext
+argument        cfdo            debuggreedy     finally         join            lnfile          nmenu           ptjump          saveas          stag            tmenu           wprevious
+ascii           cfile           delcommand      find            jumps           lnoremap        nnoremap        ptlast          sbNext          startgreplace   tnext           wq
+augroup         cfirst          delete          finish          k               loadkeymap      nnoremenu       ptnext          sball           startinsert     topleft         wqall
+aunmenu         cgetbuffer      delfunction     first           keepalt         loadview        noautocmd       ptprevious      sbfirst         startreplace    tprevious       write
+autocmd         cgetexpr        delmarks        fixdel          keepjumps       lockmarks       nohlsearch      ptrewind        sblast          stjump          trewind         wsverb
+bNext           cgetfile        diffget         fold            keepmarks       lockvar         noreabbrev      ptselect        sbmodified      stop            try             wundo
+badd            change          diffoff         foldclose       keeppatterns    lolder          noremap         put             sbnext          stopinsert      tselect         wviminfo
+ball            changes         diffpatch       folddoclosed    lNext           lopen           noremenu        pwd             sbprevious      stselect        tunmenu         xall
+bdelete         chdir           diffput         folddoopen      lNfile          lpfile          normal          py3             sbrewind        substitute      unabbreviate    xit
+behave          checkpath       diffsplit       foldopen        laddbuffer      lprevious       noswapfile      py3do           sbuffer         sunhide         undo            xmap
+belowright      checktime       diffthis        for             laddexpr        lrewind         number          py3file         scriptencoding  sunmap          undojoin        xmapclear
+bfirst          chistory        diffupdate      function        laddfile        ls              nunmap          pydo            scriptnames     sunmenu         undolist        xmenu
+blast           clast           digraphs        global          language        ltag            nunmenu         pyfile          scscope         suspend         unhide          xnoremap
+bmodified       clearjumps      display         goto            last            lua             oldfiles        python          set             sview           unlet           xnoremenu
+bnext           clist           djump           grep            later           luado           omap            python3         setfiletype     swapname        unlockvar       xunmap
+botright        close           dlist           grepadd         lbottom         luafile         omapclear       pythonx         setglobal       syncbind        unmap           xunmenu
+bprevious       cmap            doautoall       gui             lbuffer         lunmap          omenu           pyx             setlocal        syntax          unmenu          yank
+break           cmapclear       doautocmd       gvim            lcd             lvimgrep        only            pyxdo           sfind           syntime         unsilent        z
+breakadd        cmenu           drop            hardcopy        lchdir          lvimgrepadd     onoremap        pyxfile         sfirst          t               update          ~
+breakdel        cnewer          dsearch         help            lclose          lwindow         onoremenu       qall            shell           tNext           verbose
+
