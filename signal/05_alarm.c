@@ -3,7 +3,6 @@
 
 int main()
 {
-
     int ret = 0;
     ret = alarm(5);
     printf("ret=%d\n",ret);

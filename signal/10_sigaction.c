@@ -14,7 +14,8 @@ int main()
     act.sa_flags = 0;
     act.sa_handler = catchsig;
     sigemptyset(&act.sa_mask);
-    sigaction(SIGALRM,&act,NULL);
+    sigaction(SIGALRM,&act,NULL);//捕获闹钟的信号
+
     //设置定时器
     struct itimerval it = {{3,0},{4,0}};//4s后第一次闹钟，之后每隔3s一次闹钟
     setitimer(ITIMER_REAL,&it,NULL);//设置闹钟

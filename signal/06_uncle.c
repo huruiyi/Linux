@@ -5,8 +5,9 @@ int main()
 {
     int i=0;
     alarm(1);
-    while(1){
-        printf("%d\n",i++);
+    while(1)
+    {
+        printf("%d\t",i++);
     }
     return 0;
 }

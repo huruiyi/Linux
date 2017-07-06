@@ -6,6 +6,11 @@
         "unistd.h": "c",
         "signum.h": "c",
         "stdio2.h": "c",
-        "sigaction.h": "c"
+        "sigaction.h": "c",
+        "libio.h": "c",
+        "stddef.h": "c",
+        "pthreadtypes.h": "c",
+        "pthread.h": "c",
+        "string.h": "c"
     }
 }

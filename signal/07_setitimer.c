@@ -16,7 +16,8 @@ int main()
 
     signal(SIGALRM,catchsig);//注册捕捉函数
 
-    while(1){
+    while(1)
+    {
         printf("who can kill me?\n");
         sleep(1);
     }
