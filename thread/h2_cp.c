@@ -1,4 +1,4 @@
-//多进程拷贝
+//多线程拷贝
 #include <stdio.h>
 #include <unistd.h>
 #include <sys/types.h>
@@ -8,8 +8,25 @@
 #include <string.h>
 #include <sys/stat.h>
 #include <sys/wait.h>
+#include <pthread.h>
 
 int dstfd,srcfd,n;
+
+struct fileinfo{
+    char *psrc;
+    char *pdst;
+    int cpsize;
+    int mod;
+};
+struct thfileInfoparam
+{
+    struct fileinfo * info;
+    int index;
+};
+
+typedef struct fileinfo finfo;
+typedef struct thfileInfoparam tcpparam;
+
 void validate(int argc,char *argv[])
 {
     n = 5;
@@ -37,6 +54,25 @@ void validate(int argc,char *argv[])
         perror("open dst err");
         exit(1);
     }
+}
+
+void * call(void *agr)
+{
+    tcpparam * param=(tcpparam *)agr;
+
+     //子进程
+    if(param->index== n-1)
+    {
+      //最后一个子进程
+      memcpy(param->info->pdst+param->index*param->info->cpsize,param->info->psrc+param->index*param->info->cpsize,param->info->cpsize+param->info->mod);
+    }
+    else
+    {
+      memcpy(param->info->pdst+param->index*param->info->cpsize,param->info->psrc+param->index*param->info->cpsize,param->info->cpsize);
+    }
+
+   
+    return 0;
 }
 
 int main(int argc,char *argv[])
@@ -70,29 +106,47 @@ int main(int argc,char *argv[])
         if(fork() == 0)
             break;
     }
-    //计算子进程需要拷贝的起点和大小
-    int cpsize = len /n;
-    int mod    = len % n;
-    //数据拷贝,memcpy 
-    if(i < n)
+
+
+    finfo * info=(finfo *)malloc(sizeof(finfo));
+    info->psrc=psrc;
+    info->pdst=pdst;
+    info->cpsize=len /n;
+    info->mod=len % n;
+
+    pthread_t thread[n]; 
+    pthread_t releasethread[n];
+    for(int i=0;i<n;i++)
     {
-        //子进程
-        if(i == n-1)
-        {//最后一个子进程
-            
-            memcpy(pdst+i*cpsize,psrc+i*cpsize,cpsize+mod);
-        }
-        else
-        {
-            memcpy(pdst+i*cpsize,psrc+i*cpsize,cpsize);
-        }
+        tcpparam * param=(tcpparam *)malloc(sizeof(tcpparam));
+        param->index=i;
+        param->info=info;
+        pthread_create(&thread[i],NULL,call,param);
+        
+    }
+    for(int i=0;i<n;i++)
+    {
+        releasethread[i]=pthread_join(thread[i],NULL);
+    }
+        
+    int releaes=1;//成功
+    for(int i=0;i<n;i++)
+    {
+         if(releasethread[i]!=0)
+         {
+            //失败
+            releaes=0;
+            break;
+         }
+       
+    }
+    if(releaes==0)
+    {
+        printf("释放失败，复制失败");
     }
     else
     {
-        for(i = 0; i < n ; i ++)
-        {
-            wait(NULL);
-        }
+         printf("释放成功，复制成功");
     }
     //释放映射区
     if(munmap(psrc,len) < 0)

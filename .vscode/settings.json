@@ -11,6 +11,15 @@
         "stddef.h": "c",
         "pthreadtypes.h": "c",
         "pthread.h": "c",
-        "string.h": "c"
+        "string.h": "c",
+        "stdio.h": "c",
+        "stdlib.h": "c",
+        "environments.h": "c",
+        "types.h": "c",
+        "error.h": "c",
+        "cdecl.h": "c",
+        "dirent.h": "c",
+        "errno.h": "c",
+        "stat.h": "c"
     }
 }
