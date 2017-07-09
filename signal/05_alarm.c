@@ -6,7 +6,11 @@ int main()
     int ret = 0;
     ret = alarm(5);
     printf("ret=%d\n",ret);
-    sleep(3);
+    sleep(1);
+    ret=alarm(5);
+    printf("ret=%d\n",ret);
+
+    sleep(2);
     ret=alarm(5);
     printf("ret=%d\n",ret);
     while(1)

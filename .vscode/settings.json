@@ -20,6 +20,8 @@
         "cdecl.h": "c",
         "dirent.h": "c",
         "errno.h": "c",
-        "stat.h": "c"
+        "stat.h": "c",
+        "features.h": "c",
+        "waitstatus.h": "c"
     }
 }

@@ -13,8 +13,11 @@ void catchsig(int num)
     pid_t  pid;
     //不能使用wait
     //不能回收一次就结束
-    while((pid = waitpid(-1,NULL,WNOHANG)) != -1){
-        if(pid > 0){
+    // while((pid = waitpid(-1,NULL,WNOHANG)) != -1)
+    while((pid = waitpid(-1,NULL,WNOHANG)) >0)
+    {
+        if(pid > 0)
+        {
             printf("wait %d ok\n",pid);
         }
     }
@@ -47,7 +50,8 @@ int main(int argc,char *argv[])
     {
         printf("I am %d child,pid=%d\n",i,getpid());
     }
-    else if(i == n){
+    else if(i == n)
+    {
         //parent 
         struct sigaction act;
         act.sa_flags = 0;
@@ -56,7 +60,8 @@ int main(int argc,char *argv[])
         //解除SIGCHLD信号的屏蔽
         sigprocmask(SIG_SETMASK,&oldset,NULL);//恢复现场
         //sigprocmask(SIG_UNBLOCK,&proc,NULL);//恢复现场
-        while(1){
+        while(1)
+        {
             sleep(1);
         }
     }

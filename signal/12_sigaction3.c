@@ -16,7 +16,7 @@ int main()
     act.sa_flags = 0;
     act.sa_handler = catch_sig;
     sigemptyset(&act.sa_mask);
-    sigaction(SIGINT,&act,NULL);
+    sigaction(SIGINT,&act,NULL);//补货ctrl+c
 
     while(1)
     {
