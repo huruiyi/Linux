@@ -35,7 +35,8 @@ void *customer(void *arg)
 {
     ProdInfo *ptr = NULL;
     //消费 
-    while(1){
+    while(1)
+    {
         pthread_mutex_lock(&lock);//先加锁
         while(head == NULL){//此处为什么使用while,防止饼被吃完
             pthread_cond_wait(&cond,&lock);//等待条件满足1. 释放锁，2. 阻塞线程等待条件满足 3. 被唤醒之后去抢锁

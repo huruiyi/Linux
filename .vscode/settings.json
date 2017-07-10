@@ -22,6 +22,10 @@
         "errno.h": "c",
         "stat.h": "c",
         "features.h": "c",
-        "waitstatus.h": "c"
+        "waitstatus.h": "c",
+        "getopt.h": "c",
+        "fcntl2.h": "c",
+        "string2.h": "c",
+        "pub.h": "c"
     }
 }

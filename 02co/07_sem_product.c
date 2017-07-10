@@ -11,7 +11,8 @@ int beginnum = 1000; //开始值
 void *productor(void *arg)
 {
     int index = 0;
-    while(1){
+    while(1)
+    {
         sem_wait(&blank);//判断是否可以烙饼，blank--操作
         printf("--------%s-------tid---%lu------%d\n",__FUNCTION__,pthread_self(),beginnum);
         queue[(index++)%_VEC_CNT_] = beginnum++;

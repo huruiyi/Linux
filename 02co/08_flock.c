@@ -9,7 +9,8 @@
 int main()
 {
     int fd = open(filename,O_RDWR,0664);
-    if(fd < 0){
+    if(fd < 0)
+    {
         perror("open file err");
         exit(1);
     }
@@ -20,14 +21,14 @@ int main()
     lk.l_whence = SEEK_SET;
     lk.l_len  = 0;//len代表加锁长度,0代表整个文件
 
-
-
-    if(fcntl(fd,F_SETLK,&lk) < 0){
+    if(fcntl(fd,F_SETLK,&lk) < 0)
+    {
         perror("fcntl err");
         exit(1);
     }
     
-    while(1){
+    while(1)
+    {
         sleep(1);
         printf("I am sleep %d\n",getpid());
     }
