@@ -1,0 +1,24 @@
+man 2 accept >man2accept
+man 2 bind >man2bind
+man 2 close >man2close
+man 2 connect >man2connect
+man 2 fcntl >man2fcntl
+man 2 getpeername >man2getpeername
+man 2 getsockname >man2getsockname
+man 2 getsockopt >man2getsockopt
+man 2 ioctl >man2ioctl
+man 2 listen >man2listen
+man 2 read >man2read
+man 2 recv >man2recv
+man 2 select >man2select
+man 2 send >man2send
+man 2 shutdown >man2shutdown
+man 2 socketpair>man2socketpair
+man 2 write >man2write
+man 3 getprotoent >man3getprotoent
+man 7 path_resolution>man7path_resolution
+man 7 ip >man7ip
+man 7 socket  >man7socket
+man 7 tcp  >man7tcp
+man 7 udp  >man7udp
+man 7 unix >man7unix
