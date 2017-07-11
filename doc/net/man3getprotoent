@@ -1,4 +1,4 @@
-GETPROTOENT(3)                                                                          Linux Programmer's Manual                                                                          GETPROTOENT(3)
+GETPROTOENT(3)                                                                          Linux Programmer's Manual                                                                         GETPROTOENT(3)
 
 NAME
        getprotoent, getprotobyname, getprotobynumber, setprotoent, endprotoent - get protocol entry
@@ -17,15 +17,15 @@ SYNOPSIS
        void endprotoent(void);
 
 DESCRIPTION
-       The  getprotoent() function reads the next entry from the protocols database (see protocols(5)) and returns a protoent structure containing the broken-out fields from the entry.  A connection is
+       The getprotoent() function reads the next entry from the protocols database (see protocols(5)) and returns a protoent structure containing the broken-out fields from the entry.  A connection is
        opened to the database if necessary.
 
        The getprotobyname() function returns a protoent structure for the entry from the database that matches the protocol name name.  A connection is opened to the database if necessary.
 
        The getprotobynumber() function returns a protoent structure for the entry from the database that matches the protocol number number.  A connection is opened to the database if necessary.
 
-       The setprotoent() function opens a connection to the database, and sets the next entry to the first entry.  If stayopen is nonzero, then the connection to the database will not be closed between
-       calls to one of the getproto*() functions.
+       The setprotoent() function opens a connection to the database, and sets the next entry to the first entry.  If stayopen is nonzero, then the connection  to  the  database  will  not  be  closed
+       between calls to one of the getproto*() functions.
 
        The endprotoent() function closes the connection to the database.
 
@@ -48,8 +48,8 @@ DESCRIPTION
               The protocol number.
 
 RETURN VALUE
-       The getprotoent(), getprotobyname() and getprotobynumber() functions return a pointer to a statically allocated protoent structure, or a null pointer if an error occurs or the end of the file is
-       reached.
+       The  getprotoent(),  getprotobyname() and getprotobynumber() functions return a pointer to a statically allocated protoent structure, or a null pointer if an error occurs or the end of the file
+       is reached.
 
 FILES
        /etc/protocols
@@ -73,8 +73,8 @@ ATTRIBUTES
        │setprotoent(),     │ Thread safety │ MT-Unsafe race:protoent      │
        │endprotoent()      │               │ locale                       │
        └───────────────────┴───────────────┴──────────────────────────────┘
-       In the above table, protoent in race:protoent signifies that if any of the functions setprotoent(3), getprotoent(3), or endprotoent(3) are used in parallel in different  threads  of  a  program,
-       then data races could occur.
+       In the above table, protoent in race:protoent signifies that if any of the functions setprotoent(), getprotoent(), or endprotoent() are used in parallel in different threads of a program,  then
+       data races could occur.
 
 CONFORMING TO
        POSIX.1-2001, POSIX.1-2008, 4.3BSD.
@@ -83,7 +83,7 @@ SEE ALSO
        getnetent(3), getprotoent_r(3), getservent(3), protocols(5)
 
 COLOPHON
-       This  page  is  part  of  release  4.04  of  the  Linux  man-pages  project.  A description of the project, information about reporting bugs, and the latest version of this page, can be found at
-       http://www.kernel.org/doc/man-pages/.
+       This  page  is  part  of  release  4.11  of  the  Linux  man-pages project.  A description of the project, information about reporting bugs, and the latest version of this page, can be found at
+       https://www.kernel.org/doc/man-pages/.
 
-GNU                                                                                             2015-07-23                                                                                 GETPROTOENT(3)
+GNU                                                                                            2016-10-08                                                                                 GETPROTOENT(3)
