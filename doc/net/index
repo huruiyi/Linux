@@ -22,3 +22,22 @@ man 7 socket  >man7socket
 man 7 tcp  >man7tcp
 man 7 udp  >man7udp
 man 7 unix >man7unix
+man 3 inet>man3inet
+man 3 inet_addr>man3inet_addr
+man 3 inet_aton>man3inet_aton
+man 3 inet_lnaof>man3inet_lnaof
+man 3 inet_makeaddr  >man3inet_makeaddr
+man 3 inet_net_ntop  >man3inet_net_ntop
+man 3 inet_netof>man3inet_netof
+man 3 inet_net_pton  >man3inet_net_pton
+man 3 inet_network   >man3inet_network
+man 3 inet_ntoa>man3inet_ntoa
+man 3 inet_ntop>man3inet_ntop
+man 3 inet_pton>man3inet_pton
+man 3 byteorder >man3byteorder
+man 3 getaddrinfo >man3getaddrinfo
+man 3 gethostbyname >man3gethostbyname
+man 3 getnameinfo >man3getnameinfo
+man 3 getnetent >man3getnetent
+man 5 hosts >man5hosts
+man 5 networks>man5networks
