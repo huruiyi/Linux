@@ -6,11 +6,9 @@ NAME
 SYNOPSIS
        #include <arpa/inet.h>
 
-       int inet_net_pton(int af, const char *pres,
-                         void *netp, size_t nsize);
+       int inet_net_pton(int af, const char *pres,void *netp, size_t nsize);
 
-       char *inet_net_ntop(int af, const void *netp, int bits,
-                           char *pres, size_t psize);
+       char *inet_net_ntop(int af, const void *netp, int bits,char *pres, size_t psize);
 
        Link with -lresolv.
 

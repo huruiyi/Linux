@@ -12,8 +12,7 @@ SYNOPSIS
        #define _GNU_SOURCE             /* See feature_test_macros(7) */
        #include <sys/socket.h>
 
-       int accept4(int sockfd, struct sockaddr *addr,
-                   socklen_t *addrlen, int flags);
+       int accept4(int sockfd, struct sockaddr *addr,socklen_t *addrlen, int flags);
 
 DESCRIPTION
        The  accept() system call is used with connection-based socket types (SOCK_STREAM, SOCK_SEQPACKET).  It extracts the first connection request on the queue of pending connections for the listen‐

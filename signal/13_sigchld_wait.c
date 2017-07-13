@@ -31,7 +31,6 @@ int main(int argc,char *argv[])
     sigset_t proc,oldset;
     sigemptyset(&proc);
     sigaddset(&proc,SIGCHLD);
-
     sigprocmask(SIG_BLOCK,&proc,&oldset);//设置阻塞信号集，同时取出原阻塞信号集
 
     int i;

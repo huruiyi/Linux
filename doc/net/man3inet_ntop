@@ -6,8 +6,7 @@ NAME
 SYNOPSIS
        #include <arpa/inet.h>
 
-       const char *inet_ntop(int af, const void *src,
-                             char *dst, socklen_t size);
+       const char *inet_ntop(int af, const void *src,char *dst, socklen_t size);
 
 DESCRIPTION
        This  function converts the network address structure src in the af address family into a character string.  The resulting string is copied to the buffer pointed to by dst, which must be a non-

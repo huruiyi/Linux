@@ -7,8 +7,7 @@ SYNOPSIS
        #include <sys/types.h>          /* See NOTES */
        #include <sys/socket.h>
 
-       int bind(int sockfd, const struct sockaddr *addr,
-                socklen_t addrlen);
+       int bind(int sockfd, const struct sockaddr *addr,socklen_t addrlen);
 
 DESCRIPTION
        When a socket is created with socket(2), it exists in a name space (address family) but has no address assigned to it.  bind() assigns the address specified by addr to the socket referred to by
