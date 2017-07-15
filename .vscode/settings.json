@@ -1,6 +1,6 @@
 {
-    "workbench.colorTheme": "Solarized Dark",
-    "editor.fontSize": 18,
+    "workbench.colorTheme": "Default Light+",
+    "editor.fontSize": 14,
     "editor.fontFamily": "微软雅黑",
     "window.menuBarVisibility": "default",
     "workbench.sideBar.location": "left",
@@ -35,6 +35,13 @@
         "getopt.h": "c",
         "fcntl2.h": "c",
         "string2.h": "c",
-        "pub.h": "c"
+        "pub.h": "c",
+        "in.h": "c",
+        "inet.h": "c",
+        "socket.h": "c",
+        "int-ll64.h": "c",
+        "sigcontext.h": "c",
+        "stdint.h": "c",
+        "cstdlib": "c"
     }
 }

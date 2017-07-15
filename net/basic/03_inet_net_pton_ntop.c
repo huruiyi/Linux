@@ -31,18 +31,15 @@ int main(int argc, char *argv[])
 
     printf("inet_net_pton() returned: %d\n", bits);
 
-    /* Convert binary format back to presentation, using 'bits'
-        returned by inet_net_pton() */
+    /* Convert binary format back to presentation, using 'bits'        returned by inet_net_pton() */
 
     if (inet_net_ntop(AF_INET, &addr, bits, buf, sizeof(buf)) == NULL)
         errExit("inet_net_ntop");
 
     printf("inet_net_ntop() yielded:  %s\n", buf);
 
-    /* Display 'addr' in raw form (in network byte order), so we can
-        see bytes not displayed by inet_net_ntop(); some of those bytes
-        may not have been touched by inet_net_ntop(), and so will still
-        have any initial value that was specified in argv[2]. */
+    /* Display 'addr' in raw form (in network byte order), so we can  see bytes not displayed by inet_net_ntop(); some of those bytes
+        may not have been touched by inet_net_ntop(), and so will still have any initial value that was specified in argv[2]. */
 
     printf("Raw address:              %x\n", htonl(addr.s_addr));
 
