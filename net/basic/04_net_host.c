@@ -49,6 +49,8 @@ int main()
 
     uint32_t  hostlong=ntohl(serv.sin_addr.s_addr);
     uint32_t  netlong=htonl(hostlong);
+    uint32_t  netlong2= htonl(INADDR_ANY);
+
     printf("网络字节序===>主机字节序： 端口转化%u,%u\n",ntohl(netlong),ntohl(serv.sin_addr.s_addr));
     printf("主机字节序===> 网络字节序：端口转化%u\n",netlong);
   

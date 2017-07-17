@@ -5,7 +5,7 @@
     "window.menuBarVisibility": "default",
     "workbench.sideBar.location": "left",
     "editor.renderWhitespace": "all",
-    "workbench.iconTheme": "vs-seti",
+    "workbench.iconTheme": "sc-material",
     "files.encoding": "utf8",
     "files.autoSave": "afterDelay",
     "files.associations": {
