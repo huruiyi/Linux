@@ -10,30 +10,30 @@
 //文件描述符是共享的
 int main()
 {
-    int fd=open("./h2.txt",O_RDWR); 
-    pid_t pid=fork();
-    if(pid>0)
+    int fd = open("./h2.txt", O_RDWR);
+    pid_t pid = fork();
+    if (pid > 0)
     {
         //parent
-        printf("当前进程Id:%d,父进程Id:%d,子进程Id：%d\n",getpid(),getppid(),pid);
+        printf("当前进程Id:%d,父进程Id:%d,子进程Id：%d\n", getpid(), getppid(), pid);
         //必须睡一会才能读到数据
         sleep(1);
-        if(fd>=0)
+        if (fd >= 0)
         {
-            printf("打开 成功:%d\n",fd);
-            char buf[50]={"abcdefg123456"};
-            int wcount=write(fd,buf,strlen(buf));
-            printf("写入个数:%d\n",wcount);
+            printf("打开 成功:%d\n", fd);
+            char buf[50] = {"abcdefg123456"};
+            int wcount = write(fd, buf, strlen(buf));
+            printf("写入个数:%d\n", wcount);
         }
     }
-    else if(pid==0)
+    else if (pid == 0)
     {
         //son
-        printf("当前进程Id:%d,父进程Id:%d，son\n",getpid(),getppid());
-        char bufs[100]={0};
-        read(fd,bufs,sizeof(bufs));
-        printf("子进程读取的数据：%s\n",bufs);
+        printf("当前进程Id:%d,父进程Id:%d，son\n", getpid(), getppid());
+        char bufs[100] = {0};
+        read(fd, bufs, sizeof(bufs));
+        printf("子进程读取的数据：%s\n", bufs);
     }
-   
+
     return 1;
 }

@@ -10,15 +10,15 @@
 //文件描述符是共享的
 int main()
 {
-    int fd=open("./h2.txt",O_RDWR); 
-    if(fd>=0)
+    int fd = open("./h2.txt", O_RDWR);
+    if (fd >= 0)
     {
-         printf("打开 成功:%d\n",fd);
+        printf("打开 成功:%d\n", fd);
     }
-    
-    char bufs[100]={0};
-    read(fd,bufs,100);
-    printf("读取的数据：%s\n",bufs);
+
+    char bufs[100] = {0};
+    read(fd, bufs, 100);
+    printf("读取的数据：%s\n", bufs);
     close(fd);
 
     return 1;

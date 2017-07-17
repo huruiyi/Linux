@@ -6,7 +6,6 @@ int main()
     int a = 10;
     //int b = a/0;
     char *buf = NULL;
-    strcpy(buf,"hello");
+    strcpy(buf, "hello");
     return 0;
 }
-
