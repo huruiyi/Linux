@@ -18,14 +18,14 @@ int main()
     struct sockaddr_in serv;
     serv.sin_family = AF_INET;//版本
     serv.sin_port = htons(8889);//设置端口
-    //inet_pton(AF_INET,"192.168.137.129",&serv.sin_addr.s_addr);//设置ip
-    serv.sin_addr.s_addr  = INADDR_ANY;
+    inet_pton(AF_INET,"127.0.0.1",&serv.sin_addr.s_addr);//设置ip
+    //serv.sin_addr.s_addr  = INADDR_ANY;
     bind(sockfd,(struct sockaddr*)&serv,sizeof(serv));
-    if(bind(sockfd,(struct sockaddr*)&serv,sizeof(serv)) < 0)
-    {
-        perror("bind err");
-        exit(EXIT_FAILURE);
-    }
+    // if(bind(sockfd,(struct sockaddr*)&serv,sizeof(serv)) < 0)
+    // {
+    //     perror("bind err");
+    //     exit(EXIT_FAILURE);
+    // }
     //3. 侦听
     listen(sockfd,128);
     //4. 等待连接

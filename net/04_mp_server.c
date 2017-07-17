@@ -21,7 +21,6 @@ int main()
     serv.sin_addr.s_addr = htonl(INADDR_ANY);//本地任意有效IP都可以作为客户端连接地址
 
     Bind(fd,(struct sockaddr*)&serv,sizeof(serv));
-
     Listen(fd,128);
 
     sigset_t sbset,oldset;
@@ -29,13 +28,13 @@ int main()
     sigaddset(&sbset,SIGCHLD);//把SIGCHLD信号加入集合
     sigprocmask(SIG_BLOCK,&sbset,&oldset);//设置阻塞信号集
 
-
     struct sockaddr_in client;
     socklen_t len = sizeof(client);
     int flags = 0;
     char strIP[32]={0};
     int cfd;
-    while(1){
+    while(1)
+    {
         cfd = Accept(fd,(struct sockaddr*)&client,&len);
         printf("new conn %s:%d\n",inet_ntop(AF_INET,&client.sin_addr.s_addr,strIP,sizeof(strIP)),ntohs(client.sin_port));
         if(cfd <=0)
@@ -52,7 +51,6 @@ int main()
             while(1)
             {
                 int ret = read(cfd,buf,sizeof(buf));
-
                 if(ret < 0)
                 {
                     if(errno == EINTR)

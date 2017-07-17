@@ -17,7 +17,8 @@ int main(int argc, char *argv[])
     int domain, s;
     char str[INET6_ADDRSTRLEN];
 
-    if (argc != 3) {
+    if (argc != 3) 
+    {
         fprintf(stderr, "Usage: %s {i4|i6|<num>} string\n", argv[0]);
         exit(EXIT_FAILURE);
     }
