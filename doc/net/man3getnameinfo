@@ -7,9 +7,7 @@ SYNOPSIS
        #include <sys/socket.h>
        #include <netdb.h>
 
-       int getnameinfo(const struct sockaddr *addr, socklen_t addrlen,
-                       char *host, socklen_t hostlen,
-                       char *serv, socklen_t servlen, int flags);
+       int getnameinfo(const struct sockaddr *addr, socklen_t addrlen,char *host, socklen_t hostlen,char *serv, socklen_t servlen, int flags);
 
    Feature Test Macro Requirements for glibc (see feature_test_macros(7)):
 
