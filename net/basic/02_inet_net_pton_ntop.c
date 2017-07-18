@@ -2,8 +2,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define errExit(msg)    do { perror(msg); exit(EXIT_FAILURE); \
-                        } while (0)
+#define errExit(msg)        \
+    do                      \
+    {                       \
+        perror(msg);        \
+        exit(EXIT_FAILURE); \
+    } while (0)
 
 int main(int argc, char *argv[])
 {
@@ -11,9 +15,9 @@ int main(int argc, char *argv[])
     struct in_addr addr;
     int bits;
 
-    if (argc < 2) 
+    if (argc < 2)
     {
-        fprintf(stderr,"Usage: %s presentation-form [addr-init-value]\n",argv[0]);
+        fprintf(stderr, "Usage: %s presentation-form [addr-init-value]\n", argv[0]);
         exit(EXIT_FAILURE);
     }
 

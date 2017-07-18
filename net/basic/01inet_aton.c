@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
         exit(EXIT_FAILURE);
     }
 
-    if (inet_aton(argv[1], &addr) == 0) 
+    if (inet_aton(argv[1], &addr) == 0)
     {
         fprintf(stderr, "Invalid address\n");
         exit(EXIT_FAILURE);

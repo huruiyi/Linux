@@ -5,9 +5,14 @@
 #include <unistd.h>
 
 #define handle_error_en(en, msg) \
-        do { errno = en; perror(msg); exit(EXIT_FAILURE); } while (0)
+    do                           \
+    {                            \
+        errno = en;              \
+        perror(msg);             \
+        exit(EXIT_FAILURE);      \
+    } while (0)
 
-static void * thread_func(void *ignored_argument)
+static void *thread_func(void *ignored_argument)
 {
     int s;
 
@@ -27,7 +32,7 @@ static void * thread_func(void *ignored_argument)
 
     /* sleep() is a cancellation point */
 
-    sleep(1000);        /* Should get canceled while we sleep */
+    sleep(1000); /* Should get canceled while we sleep */
 
     /* Should never get here */
 
@@ -47,7 +52,7 @@ int main(void)
     if (s != 0)
         handle_error_en(s, "pthread_create");
 
-    sleep(2);           /* Give thread a chance to get started */
+    sleep(2); /* Give thread a chance to get started */
 
     printf("main(): sending cancellation request\n");
     s = pthread_cancel(thr);

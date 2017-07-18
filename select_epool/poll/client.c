@@ -24,14 +24,17 @@ int main(int argc, char *argv[])
 
     Connect(sockfd, (struct sockaddr *)&servaddr, sizeof(servaddr));
 
-    while (fgets(buf, MAXLINE, stdin) != NULL) {
+    while (fgets(buf, MAXLINE, stdin) != NULL)
+    {
         Write(sockfd, buf, strlen(buf));
         n = Read(sockfd, buf, MAXLINE);
 
-        if (n == 0) {
+        if (n == 0)
+        {
             printf("the other side has been closed.\n");
             break;
-        } else
+        }
+        else
             Write(STDOUT_FILENO, buf, n);
     }
 
@@ -39,4 +42,3 @@ int main(int argc, char *argv[])
 
     return 0;
 }
-

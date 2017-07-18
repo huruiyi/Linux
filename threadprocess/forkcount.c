@@ -10,14 +10,14 @@ void catchsig(int num)
 {
     sleep(1);
     printf("%d: parent\n", n = n + 2);
-    kill(pid, SIGUSR2); 
-} 
+    kill(pid, SIGUSR2);
+}
 
 void catchsig2(int num)
 {
     sleep(1);
     printf("%d: child\n", n = n + 2);
-    kill(ppid, SIGUSR1); 
+    kill(ppid, SIGUSR1);
 }
 
 int main(int argc, char *argv[])
@@ -27,15 +27,18 @@ int main(int argc, char *argv[])
     sigemptyset(&act.sa_mask);
 
     pid = fork();
-    if (pid > 0) {
+    if (pid > 0)
+    {
         act.sa_handler = catchsig;
         sigaction(SIGUSR1, &act, NULL);
         n = 0;
         sleep(1);
-        kill(pid, SIGUSR2); 
+        kill(pid, SIGUSR2);
         while (1)
             ;
-    } else if (pid == 0) {
+    }
+    else if (pid == 0)
+    {
         act.sa_handler = catchsig2;
         sigaction(SIGUSR2, &act, NULL);
         ppid = getppid();
@@ -46,4 +49,3 @@ int main(int argc, char *argv[])
 
     return 0;
 }
-

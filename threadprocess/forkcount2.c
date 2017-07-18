@@ -8,7 +8,7 @@ int n;
 void catchsig(int num)
 {
     printf("%d: parent\n", n = n + 2);
-} 
+}
 
 void catchsig2(int num)
 {
@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
         while (1)
         {
             printf("parent\n");
-            kill(pid, SIGUSR2); 
+            kill(pid, SIGUSR2);
             //这个sleep不管用？
             sleep(2);
         }
@@ -51,4 +51,3 @@ int main(int argc, char *argv[])
 
     return 0;
 }
-

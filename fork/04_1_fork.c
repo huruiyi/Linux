@@ -32,17 +32,17 @@ int main()
 {
     printf("begin ....\n\n");
     pid_t pid = fork();
-     
-    if(pid > 0)
+
+    if (pid > 0)
     {
         //parent
-        printf("子进程Id=%04d,pid=%04d,父进程Id(ppid)=%04d----parent\n",pid,getpid(),getppid());
-        sleep(1);//等待子进程结束
+        printf("子进程Id=%04d,pid=%04d,父进程Id(ppid)=%04d----parent\n", pid, getpid(), getppid());
+        sleep(1); //等待子进程结束
     }
-    else if(pid == 0)
+    else if (pid == 0)
     {
-        //son 
-        printf("子进程Id=%04d,pid=%04d,父进程Id(ppid)=%04d----son\n",pid,getpid(),getppid());
+        //son
+        printf("子进程Id=%04d,pid=%04d,父进程Id(ppid)=%04d----son\n", pid, getpid(), getppid());
     }
     sleep(200);
     printf("end ....\n");
