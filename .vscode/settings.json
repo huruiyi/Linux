@@ -43,6 +43,8 @@
         "int-ll64.h": "c",
         "sigcontext.h": "c",
         "stdint.h": "c",
-        "cstdlib": "c"
+        "cstdlib": "c",
+        "ctype.h": "c",
+        "wrap.h": "c"
     }
 }
