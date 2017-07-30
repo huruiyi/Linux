@@ -19,8 +19,10 @@ Return:
     成功：父进程返回子进程的进程Id，子进程返回0
     失败：父进程返回-1（子进程没有被创建，子进程没有返回信息）
     Error:
-On success, the PID of the child process is returned in the parent, and 0 is returned in the child.  
-On failure, -1 is returned in the parent,no child process is created, and errno is set appropriately.
+On success, the PID of the child process is returned in the parent, and 0 is
+returned in the child.
+On failure, -1 is returned in the parent,no child process is created, and errno
+is set appropriately.
 pid_t getpid(void) ::获取进程Id
 pid_t getppid(void)::获取父进程Id
   PPID    PID   PGID    SID TTY       TPGID STAT   UID   TIME COMMAND
@@ -28,23 +30,18 @@ pid_t getppid(void)::获取父进程Id
   4645   4646   4645   2730 pts/19     4645 S+    1000   0:00 ./a.out
 
 */
-int main()
-{
-    printf("begin ....\n\n");
-    pid_t pid = fork();
+int main() {
+  pid_t pid = fork();
 
-    if (pid > 0)
-    {
-        //parent
-        printf("子进程Id=%04d,pid=%04d,父进程Id(ppid)=%04d----parent\n", pid, getpid(), getppid());
-        sleep(1); //等待子进程结束
-    }
-    else if (pid == 0)
-    {
-        //son
-        printf("子进程Id=%04d,pid=%04d,父进程Id(ppid)=%04d----son\n", pid, getpid(), getppid());
-    }
-    sleep(200);
-    printf("end ....\n");
-    return 0;
+  if (pid > 0) {
+    printf("父进程返回Id=%04d,pid=%04d,ppid=%04d----parent\n", pid, getpid(),
+           getppid());
+    sleep(1); //等待子进程结束
+  } else if (pid == 0) {
+    printf("子进程返回Id=%04d,pid=%04d,ppid=%04d----son\n", pid, getpid(),
+           getppid());
+  }
+  sleep(30); // ps -ajx|grep 1_fork
+  printf("end ....\n");
+  return 0;
 }
