@@ -23,7 +23,7 @@ int main(int argc, char *argv[]) {
   while ((ret = read(fdsrc, buf, sizeof(buf)))) {
     write(fddes, buf, ret);
   }
-  
+
   printf("cp %s to %s ok\n", argv[1], argv[2]);
   close(fdsrc);
   close(fddes);

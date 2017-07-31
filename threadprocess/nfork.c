@@ -14,7 +14,7 @@ int main(int argc, char *argv[]) {
     }
   }
   while (1) {
-    printf("wahahaha\n");
+    printf("%d---%d\n", getpid(), getppid());
     sleep(i + 4);
   }
   return 0;

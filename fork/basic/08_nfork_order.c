@@ -10,7 +10,6 @@ int main() {
       break;
   }
   sleep(i);
-
   if (i < 5) {
     printf("I am %d son,pid=%d,ppid=%d\n", i, getpid(), getppid());
   } else {
