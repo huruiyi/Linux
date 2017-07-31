@@ -19,7 +19,7 @@ int main(int argc, char *argv[]) {
 
   // 2.execv
   char *const ps_argv[] = {"ps", "-o", "pid,ppid,pgrp,session,comm", NULL};
-  execv("/bin/ps",ps_argv);
+  execv("/bin/ps", ps_argv);
 
   // 3.execle
   // char *const ps_envp[]={"PATH=/bin:/usr/bin","TERM=console",NULL};

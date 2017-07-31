@@ -5,7 +5,7 @@
     "window.menuBarVisibility": "default",
     "workbench.sideBar.location": "left",
     "editor.renderWhitespace": "all",
-    "workbench.iconTheme": "vscode-great-icons",
+    "workbench.iconTheme": "material-icon-theme",
     "files.encoding": "utf8",
     "files.autoSave": "afterDelay",
     "editor.formatOnSave": true,
@@ -46,6 +46,7 @@
         "stdint.h": "c",
         "cstdlib": "c",
         "ctype.h": "c",
-        "wrap.h": "c"
+        "wrap.h": "c",
+        "mman-common.h": "c"
     }
 }
