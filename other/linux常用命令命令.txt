@@ -1,0 +1,20 @@
+
+service --status-all|grep mongodb //查找服务
+
+
+service mongodb status  //查看服务状态 
+
+
+tail -F linux命令  //跟踪文件变化
+
+tail -f linux命令
+
+tail -5  data //查看文件最后5行
+
+tail -5  data //查看文档前5行
+
+cat
+
+less
+
+more
