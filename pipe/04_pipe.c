@@ -4,26 +4,26 @@
 #include <unistd.h>
 
 int main() {
-  int fd[2];
-  /*
+    int fd[2];
+    /*
         fd[0]:输入
         fd[1]:输出
     */
-  pipe(fd);
+    pipe( fd );
 
-  pid_t pid = fork();
-  if (pid == 0) {
-    //son
-    sleep(3);
-    write(fd[1], "hello\n", 6);
-  } else if (pid > 0) {
-    //parent
-    char buf[256] = {0};
-    int ret = read(fd[0], buf, sizeof(buf));
-    if (ret > 0) {
-      printf("read:%s", buf);
+    pid_t pid = fork();
+    if ( pid == 0 ) {
+        //son
+        sleep( 3 );
+        write( fd[1], "hello\n", 6 );
+    } else if ( pid > 0 ) {
+        //parent
+        char buf[256] = {0};
+        int  ret = read( fd[0], buf, sizeof( buf ) );
+        if ( ret > 0 ) {
+            printf( "read:%s", buf );
+        }
+        wait( NULL );
     }
-    wait(NULL);
-  }
-  return 0;
+    return 0;
 }

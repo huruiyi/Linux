@@ -2,19 +2,19 @@
 #include <unistd.h>
 
 int main() {
-  int ret = 0;
-  ret = alarm(5);
-  printf("ret=%d\n", ret);
-  sleep(1);
-  ret = alarm(5);
-  printf("ret=%d\n", ret);
+    int ret = 0;
+    ret = alarm( 5 );
+    printf( "ret=%d\n", ret );
+    sleep( 1 );
+    ret = alarm( 5 );
+    printf( "ret=%d\n", ret );
 
-  sleep(2);
-  ret = alarm(5);
-  printf("ret=%d\n", ret);
-  while (1) {
-    printf("who can kill me?\n");
-    sleep(1);
-  }
-  return 0;
+    sleep( 2 );
+    ret = alarm( 5 );
+    printf( "ret=%d\n", ret );
+    while ( 1 ) {
+        printf( "who can kill me?\n" );
+        sleep( 1 );
+    }
+    return 0;
 }

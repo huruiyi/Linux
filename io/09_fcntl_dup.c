@@ -6,8 +6,8 @@
 #include <unistd.h>
 
 int main() {
-  int fd = fcntl(STDOUT_FILENO, F_DUPFD, 0);
+    int fd = fcntl( STDOUT_FILENO, F_DUPFD, 0 );
 
-  write(fd, "hello\n", 6);
-  return 0;
+    write( fd, "hello\n", 6 );
+    return 0;
 }

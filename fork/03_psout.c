@@ -12,16 +12,16 @@
 #include <sys/types.h>
 #include <unistd.h>
 
-int main(int argc, char *argv[]) {
-  int fd = open("ps.out", O_WRONLY | O_CREAT | O_TRUNC, 0666);
-  if (fd < 0) {
-    perror("open err");
-    return -1;
-  }
+int main( int argc, char *argv[] ) {
+    int fd = open( "ps.out", O_WRONLY | O_CREAT | O_TRUNC, 0666 );
+    if ( fd < 0 ) {
+        perror( "open err" );
+        return -1;
+    }
 
-  //重定向
-  dup2(fd, STDOUT_FILENO);
-  execlp("ps", "ps", "aux", NULL);
-  close(fd);
-  return 0;
+    //重定向
+    dup2( fd, STDOUT_FILENO );
+    execlp( "ps", "ps", "aux", NULL );
+    close( fd );
+    return 0;
 }
