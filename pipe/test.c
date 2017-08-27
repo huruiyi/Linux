@@ -7,8 +7,7 @@
 pid_t sonPid[2];
 int   main() {
     pid_t pid;
-    int   i;
-    int   fd[2];
+    int   i, fd[2];
     pipe( fd );
     for ( i = 0; i < 2; i++ ) {
         //父进程的出口
@@ -28,18 +27,15 @@ int   main() {
     if ( i < 2 ) {
         //子进程
         printf( "I am %d son,pid=%d,ppid=%d\n", i, getpid(), getppid() );
-
         if ( i == 0 ) {
             sonPid[0] = getpid();
             close( fd[0] ); //子进程关闭读端
             //需要先重定向 输出--》管道的写端
             dup2( fd[1], STDOUT_FILENO );
-            //execlp
             execlp( "ps", "ps", "aux", NULL );
         }
         if ( i == 1 ) {
             sonPid[1] = getpid();
-
             close( fd[1] ); //父进程关闭写端
             dup2( fd[0], STDIN_FILENO );
             execlp( "grep", "grep", "bash", "--color=auto", NULL );
