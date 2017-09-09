@@ -11,9 +11,9 @@ int main()
     int fd = Socket(AF_INET,SOCK_STREAM,0);
     struct sockaddr_in serv;
     serv.sin_family = AF_INET;
-    serv.sin_port = htons(9999);
-    //inet_pton(AF_INET,"127.0.0.1",&serv.sin_addr.s_addr);
-    inet_pton(AF_INET,"192.168.103.54",&serv.sin_addr.s_addr);
+    serv.sin_port = htons(8888);
+    inet_pton(AF_INET,"127.0.0.1",&serv.sin_addr.s_addr);
+    //inet_pton(AF_INET,"192.168.103.54",&serv.sin_addr.s_addr);
 
     Connect(fd,(struct sockaddr*)&serv,sizeof(serv));
 
