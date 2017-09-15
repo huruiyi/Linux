@@ -15,9 +15,9 @@ int main() {
     int sockfd = socket( AF_INET, SOCK_STREAM, 0 );
     //2. 绑定ip和端口
     struct sockaddr_in serv;
-    serv.sin_family = AF_INET;                                //版本
-    serv.sin_port = htons( 8889 );                            //设置端口
-    inet_pton( AF_INET, "127.0.0.1", &serv.sin_addr.s_addr ); //设置ip
+    serv.sin_family = AF_INET;
+    serv.sin_port = htons( 8889 );
+    inet_pton( AF_INET, "127.0.0.1", &serv.sin_addr.s_addr );
     //serv.sin_addr.s_addr  = INADDR_ANY;
     if ( bind( sockfd, (struct sockaddr *) &serv, sizeof( serv ) ) < 0 ) {
         perror( "bind err" );
