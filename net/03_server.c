@@ -17,12 +17,17 @@ int main() {
     struct sockaddr_in serv;
     serv.sin_family = AF_INET;
     serv.sin_port = htons( 8889 );
-    inet_pton( AF_INET, "127.0.0.1", &serv.sin_addr.s_addr );
-    //serv.sin_addr.s_addr  = INADDR_ANY;
+    //inet_pton( AF_INET, "127.0.0.1", &serv.sin_addr.s_addr );
+    serv.sin_addr.s_addr = INADDR_ANY;
+
+    int opt = 1;
+    setsockopt( sockfd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof( opt ) );
+
     if ( bind( sockfd, (struct sockaddr *) &serv, sizeof( serv ) ) < 0 ) {
         perror( "bind err" );
         exit( EXIT_FAILURE );
     }
+
     //3. 侦听
     listen( sockfd, 128 );
     //4. 等待连接

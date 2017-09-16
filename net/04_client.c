@@ -16,7 +16,7 @@ int main() {
     struct sockaddr_in serv;
     serv.sin_port = htons( 8889 ); //设置服务器端口
     serv.sin_family = AF_INET;
-    inet_pton( AF_INET, "192.168.137.129", &serv.sin_addr.s_addr ); //设置服务器IP
+    inet_pton( AF_INET, "127.0.0.1", &serv.sin_addr.s_addr ); //设置服务器IP
 
     connect( cfd, (struct sockaddr *) &serv, sizeof( serv ) );
     //3. 通信 read write
