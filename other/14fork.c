@@ -7,8 +7,8 @@ int main() {
     int i = 0;
     for ( i = 0; i < 2; i++ ) {
         fork();
-        //printf( "&" );   //8个进程
-        printf( "&\n" ); //6个进程
+        printf( "&" ); //8个进程
+        //printf( "&\n" ); //6个进程
     }
     wait( NULL );
     wait( NULL );
