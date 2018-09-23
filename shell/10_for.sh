@@ -24,12 +24,12 @@ done
 list="a b c d"
 for i in $list;
 do
-echo $i is apl ;
+    echo $i is apl ;
 done
 
 for filename in  *.sh
 do
-        echo "文件名：$filename"
+    echo "文件名：$filename"
 done
 
 for file in $(ls *.sh)
